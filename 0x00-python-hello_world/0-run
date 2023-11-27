@@ -1,1 +1,1 @@
-python "$PYFILE"
+python3 "$PYFILE"
