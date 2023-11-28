@@ -38,8 +38,8 @@ listint_t *insert_node(listint_t **head, int number)
 			_tempNode->next = node_n;
 			return (_tempNode);
 		}
-		_tempNode = _tempNode->next
+		_tempNode = _tempNode->next;
 	}
-	return (NULL)
+	return (NULL);
 
 }
