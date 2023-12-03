@@ -13,17 +13,22 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *temp;
 	int size_ = 0;
-	int link_el[size_];
+	int *link_el;
 	int i;
 
 	temp = *head;
 
 	if (!(*head) || !head)
 		return (1);
-	for (size = 0; temp ; size++)
+	while (temp )
 	{
-		temp = temp->next
+		size_++;
+		temp = temp->next;
 	}
+	link_el = (int *)malloc(sizeof(int) * size_);
+	if (link_el == NULL)
+		return (0);
+	temp = *head;
 	for (i = 0; i < size_; i++)
 	{
 		link_el[i] = temp->n;
@@ -31,10 +36,14 @@ int is_palindrome(listint_t **head)
 	}
 	for (i = 0; i < size_ / 2; i++)
 	{
-		if (link_el[i] == link_el[size_ - i -1])
-			return (1);
+		if (link_el[i] != link_el[size_ - i - 1])
+		{
+			free(link_el);
+			return (0);
+		}
 	}
-	return (0);
+	free(link_el);
+	return (1);
 }
 
 
