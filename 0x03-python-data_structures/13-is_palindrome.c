@@ -20,7 +20,7 @@ int is_palindrome(listint_t **head)
 
 	if (!(*head) || !head)
 		return (1);
-	while (temp )
+	while (temp)
 	{
 		size_++;
 		temp = temp->next;
