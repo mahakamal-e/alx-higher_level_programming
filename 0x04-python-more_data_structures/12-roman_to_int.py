@@ -23,4 +23,3 @@ def roman_to_int(roman_string):
             result += result_list[iterat]
 
     return result
-
