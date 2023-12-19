@@ -2,8 +2,13 @@
 class Square:
     """Defines a square"""
 
+
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes the square instance."""
+        """
+        Initializes the square instance.
+        size: length of the side of square
+        postiton: position of new squad
+        """
         self.size = size
         self.position = position
 
