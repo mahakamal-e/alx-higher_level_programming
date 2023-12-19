@@ -39,6 +39,6 @@ class Square:
             print()
         else:
             for _ in range(self.__size):
-                #This loop iterates self.__size times
-                #creating each row of the square.
+                # This loop iterates self.__size times
+                # creating each row of the square.
                 print("#" * self.__size)
