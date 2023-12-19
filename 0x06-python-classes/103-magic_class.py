@@ -15,7 +15,7 @@ class MagicClass:
             radius: the redius
         """
         self.__radius = 0
-        if type(radius) is not (int, float):
+        if type(radius) not in (int, float):
             raise TypeError('radius must be a number')
         self.__radius = radius
 
