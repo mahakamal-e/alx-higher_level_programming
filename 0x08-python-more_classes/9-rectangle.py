@@ -18,8 +18,8 @@ class Rectangle:
 
         """
 
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -70,7 +70,7 @@ class Rectangle:
 
     def area(self):
         """ get the rectangle area """
-        return self.__height * self.__width
+        return self.width * self.height
 
     def perimeter(self):
         """
@@ -118,4 +118,3 @@ class Rectangle:
     def square(cls, size=0):
         '''Returns a new Rectangle instance with width == height == size'''
         return cls(size, size)
-
