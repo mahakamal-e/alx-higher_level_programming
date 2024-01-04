@@ -1,0 +1,31 @@
+The ``text_indentation`` function
+========================
+
+Using ``text_indentation``
+---------------------
+
+This is a text_indentation test file.
+First import ``text_indentation`` from the ``5-text_indentation.py`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+::
+    >>> text_indentation('This is a sentence. Hello? And here is another word with a colon:')
+    This is a sentence.
+    <BLANKLINE>
+    Hello?
+    <BLANKLINE>
+    And here is another word with a colon:
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation(70)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
