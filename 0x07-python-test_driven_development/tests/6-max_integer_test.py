@@ -59,5 +59,6 @@ class TestMaxInteger(unittest.TestCase):
         """Unittest for max_integer([..])"""
         self.assertEqual(max_integer('maha'), 'm')
 
+
 if __name__ == '__main__':
     unittest.main()
