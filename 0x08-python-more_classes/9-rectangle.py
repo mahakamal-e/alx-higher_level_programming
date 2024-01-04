@@ -77,23 +77,23 @@ class Rectangle:
         Calculate the perimeter of the rectangle.
         """
 
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
     def __str__(self):
         """ print the rectangle with the character #"""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ''
 
         rectangle_str = ''
-        for _ in range(self.__height):
-            rectangle_str += str(self.print_symbol) * self.__width + '\n'
+        for _ in range(self.height):
+            rectangle_str += str(self.print_symbol) * self.width + '\n'
         return rectangle_str.rstrip('\n')
 
     def __repr__(self):
         """returns a string representation of the rectangle"""
-        return f"Rectangle({self.__width}, {self.__height})"
+        return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
         """ delete an instance of Rectangle """
