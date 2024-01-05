@@ -3,8 +3,9 @@
 
 import sys
 
+
 def check_safe(board, row, col):
-    """  Check if any queens threaten the current position"""
+    """ Check if any queens threaten the current position"""
     for i in range(col):
         if board[i] == row or abs(board[i] - row) == abs(i - col):
             return False
@@ -51,3 +52,5 @@ if __name__ == "__main__":
     except ValueError:
         print("N must be a number")
         sys.exit(1)
+    solveNQueens(N)
+
