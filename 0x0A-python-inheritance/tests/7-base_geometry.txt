@@ -1,0 +1,129 @@
+=======================
+How to Use 7-base_geometry.py
+=======================
+
+This module defines ``BaseGeometry `` class.
+
+Usage
+=====
+
+``MyList`` class have two Public instance methods ``area(self)``
+raises an Exception and `` integer_validator(self, name, value)``
+that validates value.
+
+::
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+::
+   >>> base_geometry = BaseGeometry()
+
+::
+   >>> type(BaseGeometry.__dict__['area'])
+   <class 'function'>
+
+::
+   >>> base_geometry.__class__.area()
+   Traceback (most recent call last):
+   TypeError: area() missing 1 required positional argument: 'self'
+
+::
+   >>> base_geometry.__class__.area()
+   Traceback (most recent call last):
+   TypeError: area() missing 1 required positional argument: 'self'
+
+::
+   >>> base_geometry.area(10)
+   Traceback (most recent call last):
+   TypeError: area() takes 1 positional argument but 2 were given
+
+::
+   >>> base_geometry.area()
+   Traceback (most recent call last):
+   Exception: area() is not implemented
+
+::
+
+   >>> base_geometry.integer_validator("my_int", 12)
+
+::
+
+   >>> base_geometry.integer_validator("my_int", [1, 2, 3])
+   Traceback (most recent call last):
+   TypeError: my_int must be an integer
+
+::
+
+   >>> base_geometry.integer_validator("my_int", (1, 2, 3))
+   Traceback (most recent call last):
+   TypeError: my_int must be an integer
+
+::
+
+   >>> base_geometry.integer_validator("my_int", 'salma')
+   Traceback (most recent call last):
+   TypeError: my_int must be an integer
+
+::
+
+   >>> base_geometry.integer_validator("my_int", 1.5)
+   Traceback (most recent call last):
+   TypeError: my_int must be an integer
+
+::
+
+    >>> base_geometry.integer_validator("my_int", {'a': 1})
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> base_geometry.integer_validator("my_int", None)
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> base_geometry.integer_validator("my_int", {1, 2, 3})
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> base_geometry.integer_validator("my_int", True)
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> base_geometry.integer_validator("my_int", -3)
+    Traceback (most recent call last):
+    ValueError: my_int must be greater than 0
+
+::
+
+    >>> base_geometry.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+    ValueError: my_int must be greater than 0
+
+::
+
+    >>> base_geometry.integer_validator("my_int")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+::
+
+    >>> base_geometry.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+
+    >>> print(base_geometry.integer_validator) # doctest: +ELLIPSIS
+    <bound method BaseGeometry.integer_validator of <7-base_geometry.BaseGeometry object at...>>
+
+::
+
+    >>> base_geometry.integer_validator("my_int", 0, 1)
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
