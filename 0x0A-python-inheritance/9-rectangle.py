@@ -8,14 +8,14 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """ Define the Constructor """
         self.integer_validator('width', width)
-        self._width = width
+        self.__width = width
         self.integer_validator('height', height)
         self.__height = height
 
     def area(self):
         """get the area of rectangle """
-        return self._width * self._height
+        return self.__width * self.__height
 
     def __str__(self):
         """Method that return rectangle description """
-        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        return '[Rectangle] {}/{}'.format(self.__width, self.__height)
