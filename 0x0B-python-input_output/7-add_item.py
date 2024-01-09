@@ -15,4 +15,4 @@ if __name__ == '__main__':
     python_list = sys.argv[1:]
     if os.path.exists(filename):
         python_list = load_from_json_file(filename) + python_list
-    save_to_json_file(python_list, filename) 
+    save_to_json_file(python_list, filename)
