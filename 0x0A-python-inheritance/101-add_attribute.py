@@ -2,7 +2,7 @@
 """ function module """
 
 
-def add_attribute(obj, attribute_nema, value):
+def add_attribute(obj, attribute_name, value):
     """adds a new attribute to an object if it’s possible
     Args:
        obj: object name as input.
@@ -14,4 +14,4 @@ def add_attribute(obj, attribute_nema, value):
     if not hasattr(obj, '__dict__'):
         raise TypeError("can't add new attribute")
 
-    setattr(obj, attribute, value)
+    setattr(obj, attribute_name, value)
