@@ -8,7 +8,7 @@ def pascal_triangle(n):
         return []
     arr_ = [[1]]
     while len(arr_) != n:
-        last_element = arr_ [-1]
+        last_element = arr_[-1]
         tmp = [1]
         for i in range(len(last_element) - 1):
             tmp.append(last_element[i] + last_element[i + 1])
