@@ -2,6 +2,7 @@
 """ Base class Module """
 import json
 import os
+import csv
 
 
 class Base:
@@ -58,13 +59,13 @@ class Base:
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
-            dummy_instance = cls(1, 1)
+            new_instance = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy_instance = cls(1)
+            new_instance = cls(1)
         else:
-            dummy_instance = None
-        dummy_instance.update(**dictionary)
-        return dummy_instance
+            new_instance = None
+        new_instance.update(**dictionary)
+        return new_instance
 
     @classmethod
     def load_from_file(cls):
@@ -77,3 +78,38 @@ class Base:
                  dict_list = cls.from_json_string(file_.read())
         instance_list = [cls.create(**dictionary) for dictionary in dict_list]
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of objects to a CSV file."""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", encoding="utf-8") as file_:
+            if list_objs is None or list_objs == []:
+                file_.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                            for obj in list_objs]
+                else:
+                    list_objs = [[obj.id, obj.size, obj.x, obj.y]
+                            for obj in list_objs]
+                csv_writer = csv.writer(file_)
+                csv_writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize objects from a CSV file."""
+        filename = cls.__name__ + ".csv"
+        list_ = []
+        with open(filename, "r", encoding="utf-8") as file_:
+            csv_reader = csv.reader(file_)
+            for i in csv_reader:
+                i = [int(line) for line in i]
+                if cls.__name__ == "Rectangle":
+                    dict_ = {"id": i[0], "width": i[1], "height": i[2],
+                         "x": i[3], "y": i[4]}
+                else:
+                    dict_ = {"id": i[0], "size": i[1],
+                         "x": i[2], "y": i[3]}
+                list_.append(cls.create(**dict_))
+        return list_
