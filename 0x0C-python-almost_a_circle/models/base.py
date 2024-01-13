@@ -47,7 +47,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ 
+        """
         Returns the list of the JSON string representation json_string.
         """
         if json_string is None or not json_string:
@@ -75,7 +75,7 @@ class Base:
             return []
         else:
             with open(filename, "r", encoding="utf-8") as file_:
-                 dict_list = cls.from_json_string(file_.read())
+                dict_list = cls.from_json_string(file_.read())
         instance_list = [cls.create(**dictionary) for dictionary in dict_list]
         return instance_list
 
@@ -89,10 +89,10 @@ class Base:
             else:
                 if cls.__name__ == "Rectangle":
                     list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
-                            for obj in list_objs]
+                                 for obj in list_objs]
                 else:
                     list_objs = [[obj.id, obj.size, obj.x, obj.y]
-                            for obj in list_objs]
+                                 for obj in list_objs]
                 csv_writer = csv.writer(file_)
                 csv_writer.writerows(list_objs)
 
@@ -107,9 +107,9 @@ class Base:
                 i = [int(line) for line in i]
                 if cls.__name__ == "Rectangle":
                     dict_ = {"id": i[0], "width": i[1], "height": i[2],
-                         "x": i[3], "y": i[4]}
+                             "x": i[3], "y": i[4]}
                 else:
                     dict_ = {"id": i[0], "size": i[1],
-                         "x": i[2], "y": i[3]}
+                             "x": i[2], "y": i[3]}
                 list_.append(cls.create(**dict_))
         return list_
