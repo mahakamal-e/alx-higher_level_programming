@@ -25,7 +25,7 @@ class Base:
         Returns the JSON string representation
         """
         if not list_dictionaries or len(list_dictionaries) == 0:
-            return []
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
 
@@ -60,11 +60,10 @@ class Base:
         """Returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
             new_instance = cls(1, 1)
-        elif cls.__name__ == "Square":
-            new_instance = cls(1)
         else:
-            new_instance = None
+            new_instance = cls(1)
         new_instance.update(**dictionary)
+
         return new_instance
 
     @classmethod
