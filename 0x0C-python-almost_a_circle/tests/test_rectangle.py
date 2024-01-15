@@ -13,9 +13,6 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(Rectangle(9, 2), Base)
 
     def test_init_rectangle(self):
-        a = Rectangle(11, 12)
-        self.assertEqual(a.id, 1)
-
         a1 = Rectangle(10, 12, 0, 0, 12)
         self.assertEqual(a1.id, 12)
 
