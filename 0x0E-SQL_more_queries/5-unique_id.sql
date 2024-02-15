@@ -1,7 +1,5 @@
--- a script that creates the database hbtn_0d_usa and the table states,
---  (in the database hbtn_0d_usa) on your MySQL server.
-CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states (
-	id INT unique AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	name VARCHAR(256) NOT NULL
+-- a script that creates the table unique_id on your MySQL server.
+CREATE TABLE IF NOT EXISTS id_not_null (
+    id INT DEFAULT 1,
+    name VARCHAR(256)
 );
