@@ -1,10 +1,9 @@
---  a script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter.
-SELECT tv_genres.name
-FROM tv_genres
-WHERE NOT EXISTS(
-	SELECT 1
+-- a script that lists all shows without the genre Comedy
+SELECT title
+FROM tv_shows
+WHERE id NOT IN(
+	SELECT show_id
 	FROM tv_show_genres
-	JOIN tv_shows ON tv_show_genres.show_id = tv_shows.id
-	WHERE tv_shows.title = 'Dexter' AND tv_genres.id = tv_show_genres.genre_id
+	WHERE genre_id=(SELECT id FROM tv_genres WHERE name = 'Comedy')
 )
-ORDER BY tv_genres.name ASC;
+ORDER BY title ASC;
