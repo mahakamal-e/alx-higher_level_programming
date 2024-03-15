@@ -13,6 +13,10 @@ if __name__ == "__main__":
                            db=sys.argv[3])
     cursor = db_connection.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    result = cursor.fetchall()
+
+    for state in result:
+        print(state)
 
     cursor.close()
     db_connection.close()
