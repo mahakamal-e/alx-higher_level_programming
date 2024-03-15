@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 Module for writing a Script that takes in an argument
 and displays all values
 """
