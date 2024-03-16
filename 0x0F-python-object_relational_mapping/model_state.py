@@ -13,5 +13,5 @@ class State(Base):
     """State represents a table in MySQL database"""
 
     __tablename__ = 'states'
-    id = column(Integer, unique=True, primary_key=True, nullable=False)
-    name = column(String(128), nullable=False)
+    id = Column(Integer, unique=True, primary_key=True, nullable=False)
+    name = Column(String(128), nullable=False)
