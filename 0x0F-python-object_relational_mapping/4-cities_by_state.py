@@ -12,7 +12,9 @@ if __name__ == "__main__":
                                     passwd=sys.argv[2],
                                     db=sys.argv[3])
     cursor = db_connection.cursor()
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities "
+                   "INNER JOIN states ON states.id=cities.state_id "
+                   "ORDER BY cities.id ASC")
 
     result = cursor.fetchall()
 
