@@ -19,7 +19,7 @@ if __name__ == '__main__':
     session = Session()
 
     queryResult = session.query(City, State) \
-                                .join(State, City.state_id == State.id) \
-                                .order_by(City.id)
+                         .join(State, City.state_id == State.id) \
+                         .order_by(City.id)
     for city, state in queryResult:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
