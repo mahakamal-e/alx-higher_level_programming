@@ -20,6 +20,6 @@ if __name__ == '__main__':
     result = session.query(State).filter(State.name == sys.argv[4]).first()
 
     if result:
-        print("{}".format(state.id))
+        print("{}".format(result.id))
     else:
         print("Not Found")
