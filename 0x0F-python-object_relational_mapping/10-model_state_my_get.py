@@ -22,4 +22,4 @@ if __name__ == '__main__':
     if result:
         print("{}".format(result.id))
     else:
-        print("Not Found")
+        print("Not found")
