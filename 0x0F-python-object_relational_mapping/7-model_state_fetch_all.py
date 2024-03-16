@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     result = session.query(State).order_by(State.id)
