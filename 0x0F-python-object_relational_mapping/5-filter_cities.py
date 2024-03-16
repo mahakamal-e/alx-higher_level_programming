@@ -14,7 +14,8 @@ if __name__ == "__main__":
     cursor = db_connection.cursor()
     cursor.execute("SELECT cities.name FROM cities "
                    "INNER JOIN states ON states.id=cities.state_id "
-                   "WHERE states.name = %s ORDER BY states.id ASC", [sys.argv[4]])
+                   "WHERE states.name = %s ORDER BY states.id ASC",
+                   [sys.argv[4]])
 
     result = cursor.fetchall()
 
