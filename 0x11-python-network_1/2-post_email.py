@@ -11,7 +11,6 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
     data = urllib.parse.urlencode({'email': email}).encode()
-    response = urlopen(url, data)
-    body = response.read()
-    response.close()  # Close the response after reading
+    with urlopen(url, data) as response:
+        body = response.read()
     print(body.decode("utf-8"))
