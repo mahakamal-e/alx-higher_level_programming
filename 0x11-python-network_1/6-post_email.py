@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ Takes URL & EMAIL address,
 sends POST request then displays the body of the response."""
 
