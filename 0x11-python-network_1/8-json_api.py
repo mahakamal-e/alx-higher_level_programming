@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" takes a letter and sends a POST request to URL with letter as a parameter"""
+""" takes a letter & sends a POST request to URL with letter as a parameter"""
 
 
 import requests
@@ -20,4 +20,4 @@ if __name__ == "__main__":
         else:
             print("No result")
     except ValueError:
-         print("Not a valid JSON")
+        print("Not a valid JSON")
