@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const pathFile = process.argv[2];
+const url = process.argv[2];
 const request = require('request');
 
-request(pathFile, (error, response, body) => {
+request(url, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
